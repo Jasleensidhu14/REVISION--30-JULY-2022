@@ -77,3 +77,22 @@ select * from hurrysale where ship_date_new < date_sub(now(), interval 1 week)
 select date_sub(now(), interval 1 week) 
 select date_sub(now(), interval  1 year) 
 
+alter table hurrysale
+add column Month_New int;
+
+select * from hurrysale
+
+alter table hurrysale
+modify column Day_New int; 
+
+select * from hurrysale
+
+select year(now()) 
+
+update hurrysale set Month_new= month(order_date_new)
+update hurrysale set day_new= day(order_date_new);
+update hurrysale set Year_new= Year(order_date_new,'%Y');
+update hurrysale set Year_new= year(order_date_new); 
+
+///To convert decimal value (datatype)to date(datattype) ///
+update hurrysale set year = (ship_date, '%m/%d/%Y')
